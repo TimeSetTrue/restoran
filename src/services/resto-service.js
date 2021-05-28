@@ -18,7 +18,7 @@ export default class RestoService {
 	async setOrder(order) {
 
 		if(order == '') {
-			return null
+			return null;
 		}
 
         const response = await fetch(`${this._apiBase}/orderes`, {

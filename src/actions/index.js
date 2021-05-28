@@ -37,6 +37,13 @@ const defaultItems = () => {
 	};
 };
 
+const minesItem = (id) => {
+	return {
+		type: 'MINES_ITEM',
+		payload: id,
+	};
+};
+
 export {
 	menuLoaded,
 	menuRequested,
@@ -44,4 +51,5 @@ export {
 	addItemCart,
 	removeItemCart,
 	defaultItems,
+	minesItem,
 }

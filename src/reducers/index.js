@@ -79,9 +79,66 @@ const reducer = (state = initialState, action) => {
 				...state,
 				items: [],
 			}
+		case 'MINES_ITEM':
+			const idMin = action.payload;
+			const itemIndexMin = state.items.findIndex(item => item.id === idMin);
+	
+			if(itemIndexMin >= 0) {
+				const itemInState = state.items.find(item => item.id === idMin);
+				const newItemMin = {
+                    ...itemInState,
+                    itemCart: --itemInState.itemCart,
+					priceFull: itemInState.price * itemInState.itemCart,
+                }
+				if(newItemMin.itemCart <= 0) {
+					const itemInState = state.items.find(item => item.id === idMin);
+					const newItemMin = {
+						...itemInState,
+						itemCart: 0,
+						priceFull: 0,
+					}
+					return {
+						...state, 
+						items: [
+							...state.items.slice(0, itemIndexMin),
+							newItemMin,
+							...state.items.slice(itemIndexMin + 1)
+						],
+						totalPrice: state.totalPrice - itemInState.priceFull,
+					}
+				}
+				return {
+                    ...state, 
+                    items: [
+                        ...state.items.slice(0, itemIndexMin),
+                        newItemMin,
+                        ...state.items.slice(itemIndexMin + 1)
+                    ],
+					totalPrice: state.totalPrice - newItemMin.price,
+                }
+			}
+			const itemMin = state.menu.find(item => item.id === idMin);
+			const newItemMin = {
+				title: itemMin.title,
+				url: itemMin.url,
+				price: itemMin.price,
+				id: itemMin.id,
+				itemCart: 1,
+				priceFull: itemMin.price,
+			};
+			return {
+				...state,
+				items: [
+					...state.items,
+					newItemMin,
+				],
+				totalPrice: state.totalPrice - newItemMin.price
+			};
 		default: 
 			return state;
 	}
 }
+
+
 
 export default reducer;
