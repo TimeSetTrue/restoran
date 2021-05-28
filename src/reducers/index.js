@@ -26,9 +26,8 @@ const reducer = (state = initialState, action) => {
 			};
 		case 'ADD_MENU_CART':
 			const id = action.payload;
-
 			const itemInd = state.items.findIndex(item => item.id === id);
-			
+
 			if(itemInd >= 0) {
 				const itemInState = state.items.find(item => item.id === id);
 				const newItem = {
@@ -43,10 +42,9 @@ const reducer = (state = initialState, action) => {
                         newItem,
                         ...state.items.slice(itemInd + 1)
                     ],
-					totalPrice: state.totalPrice + newItem.price,
                 }
 			}
-		
+	
 			const item = state.menu.find(item => item.id === id);
 			const newItem = {
 				title: item.title,
@@ -62,8 +60,8 @@ const reducer = (state = initialState, action) => {
 					...state.items,
 					newItem,
 				],
-				totalPrice: state.totalPrice + newItem.price
 			};
+			
 		case 'REMOVE_MENU_CART': 
 			const idx = action.payload;
 			const itemIndex = state.items.findIndex(item => item.id === idx);
@@ -82,7 +80,8 @@ const reducer = (state = initialState, action) => {
 		case 'MINES_ITEM':
 			const idMin = action.payload;
 			const itemIndexMin = state.items.findIndex(item => item.id === idMin);
-	
+
+
 			if(itemIndexMin >= 0) {
 				const itemInState = state.items.find(item => item.id === idMin);
 				const newItemMin = {
@@ -90,12 +89,12 @@ const reducer = (state = initialState, action) => {
                     itemCart: --itemInState.itemCart,
 					priceFull: itemInState.price * itemInState.itemCart,
                 }
-				if(newItemMin.itemCart <= 0) {
+				if(newItemMin.itemCart <= 1) {
 					const itemInState = state.items.find(item => item.id === idMin);
 					const newItemMin = {
 						...itemInState,
-						itemCart: 0,
-						priceFull: 0,
+						itemCart: 1,
+						priceFull: itemInState.price,
 					}
 					return {
 						...state, 
@@ -104,7 +103,6 @@ const reducer = (state = initialState, action) => {
 							newItemMin,
 							...state.items.slice(itemIndexMin + 1)
 						],
-						totalPrice: state.totalPrice - itemInState.priceFull,
 					}
 				}
 				return {
@@ -114,7 +112,6 @@ const reducer = (state = initialState, action) => {
                         newItemMin,
                         ...state.items.slice(itemIndexMin + 1)
                     ],
-					totalPrice: state.totalPrice - newItemMin.price,
                 }
 			}
 			const itemMin = state.menu.find(item => item.id === idMin);
@@ -132,8 +129,13 @@ const reducer = (state = initialState, action) => {
 					...state.items,
 					newItemMin,
 				],
-				totalPrice: state.totalPrice - newItemMin.price
 			};
+		case 'TOTAL_PRICE':
+			const totalPriceSet = state.items.reduce((total, price) => total + price.priceFull, 0);
+			return {
+				...state,
+				totalPrice: totalPriceSet,
+			}
 		default: 
 			return state;
 	}

@@ -2,7 +2,7 @@ import React from 'react';
 import './menu-list-item.scss';
 import {Link} from 'react-router-dom';
 
-const MenuListItem = ({menuItem, addItemCart}) => {
+const MenuListItem = ({menuItem, addItemCart, pricePlus}) => {
     const {title, url, price, category, id} = menuItem;  
     let iconClass;
     switch(category) {
@@ -30,7 +30,10 @@ const MenuListItem = ({menuItem, addItemCart}) => {
                 <div className="menu__category">Category: <span>{icon}{category}</span></div>
                 <div className="menu__price">Price: <span>{price}</span></div>
             </Link>
-                <button onClick={() => addItemCart()} className="menu__btn">Add to cart</button>
+                <button 
+                    onClick={() => {addItemCart();
+                                    pricePlus()}} 
+                    className="menu__btn">Add to cart</button>
                 <span className = 'menu__category_Img'></span>
            
         </li>

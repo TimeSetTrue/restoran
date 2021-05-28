@@ -21,7 +21,7 @@ export default class RestoService {
 			return null;
 		}
 
-        const response = await fetch(`${this._apiBase}/orderes`, {
+        const response = await fetch(`${this._apiBase}/order`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'

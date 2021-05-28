@@ -44,6 +44,12 @@ const minesItem = (id) => {
 	};
 };
 
+const pricePlus = () => {
+	return {
+		type: 'TOTAL_PRICE',
+	};
+};
+
 export {
 	menuLoaded,
 	menuRequested,
@@ -52,4 +58,5 @@ export {
 	removeItemCart,
 	defaultItems,
 	minesItem,
+	pricePlus,
 }

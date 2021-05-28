@@ -2,19 +2,21 @@ import React, {Component} from 'react';
 import CartTable from '../cart-table';
 import {connect} from 'react-redux';
 import WithRestoService from '../hoc';
-import {defaultItems} from '../../actions';
+import {defaultItems, pricePlus} from '../../actions';
 import './itemPage.css';
 
 class CartPage extends Component {
     
     render() {
-        const {RestoService, items, defaultItems} = this.props;
+        const {RestoService, items, defaultItems, pricePlus} = this.props;
         return (
             <div className="cart"> 
                 <CartTable/>
-                <button className="cart__btn" onClick={() => {RestoService.setOrder(items);
+                <button className="cart__btn" 
+                    onClick={() => {RestoService.setOrder(items);
                                          defaultItems();
-                                        }}>Добавить</button>
+                                         pricePlus();
+                    }}>Добавить</button>
             </div>
         )
     }
@@ -28,6 +30,7 @@ const mapStateToProps = ({items}) => {
 
 const mapDispatchToProps = {
     defaultItems,
+    pricePlus,
 }
 
 
