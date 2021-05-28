@@ -44,15 +44,12 @@ const minesItem = (id) => {
 	};
 };
 
-<<<<<<< HEAD
 const pricePlus = () => {
 	return {
 		type: 'TOTAL_PRICE',
 	};
 };
 
-=======
->>>>>>> fd3f2ef73bd1dd7c942e0c6dbaba8bd73ba9c0cd
 export {
 	menuLoaded,
 	menuRequested,
@@ -61,8 +58,5 @@ export {
 	removeItemCart,
 	defaultItems,
 	minesItem,
-<<<<<<< HEAD
 	pricePlus,
-=======
->>>>>>> fd3f2ef73bd1dd7c942e0c6dbaba8bd73ba9c0cd
 }
