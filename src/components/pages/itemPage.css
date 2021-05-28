@@ -41,3 +41,16 @@
 .meat {
 	background-image: url('https://cdn2.iconfinder.com/data/icons/food-drinks-v3/512/Steak-512.png');
 }
+
+.cart__btn {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	padding: 10px 30px;
+	font-size: 20px;
+	border: none;
+	margin-top: 40px;
+	border-radius: 10px;
+	font-weight: bold;
+
+}
