@@ -11,7 +11,7 @@ const menuRequested = () => {
 	};
 };
 
-const error = () => {
+const errorBoun = () => {
 	return {
 		type: 'MENU_ERROR',
 	};
@@ -53,7 +53,7 @@ const pricePlus = () => {
 export {
 	menuLoaded,
 	menuRequested,
-	error,
+	errorBoun,
 	addItemCart,
 	removeItemCart,
 	defaultItems,

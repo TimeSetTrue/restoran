@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import WithRestoService from '../hoc';
-import {menuLoaded, menuRequested, error, addItemCart} from '../../actions';
+import {menuLoaded, menuRequested, errorBoun, addItemCart} from '../../actions';
 import Spinner from '../spinner';
 import Error from '../error';
 
@@ -15,16 +15,16 @@ class ItemPage extends Component {
         if( this.props.menuItems.length === 0){
             this.props.menuRequested();
 
-            const {RestoService} = this.props;
+            const {RestoService, errorBoun} = this.props;
             RestoService.getMenuItems()
                 .then(res => this.props.menuLoaded(res))
-                .catch(error => this.props.menuError(error));
+                .catch(() => errorBoun())
         }
     }
 
 
 	render() {
-		const {loaded, addItemCart} = this.props;
+		const {loaded, addItemCart, error} = this.props;
 
 		const item = this.props.menuItems.find(el => +el.id === +this.props.match.params.id);
 
@@ -70,7 +70,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     menuLoaded,
     menuRequested,
-    error,
+    errorBoun,
     addItemCart,
 }
 
