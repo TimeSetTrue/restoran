@@ -12,7 +12,7 @@ export default class RestoService {
 	}
 
 	async getMenuItems() {
-		return await this.getResourse('/menu/')
+		return await this.getResourse(`/menu/`)
 	}
 
 	async setOrder(order) {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import WithRestoService from '../hoc';
-import {menuLoaded, menuRequested, errorBoun, addItemCart} from '../../actions';
+import { menuLoaded, menuRequested, errorBoun, addItemCart, pricePlus } from '../../actions';
 import Spinner from '../spinner';
 import Error from '../error';
 
@@ -24,7 +24,7 @@ class ItemPage extends Component {
 
 
 	render() {
-		const {loaded, addItemCart, error} = this.props;
+		const {loaded, addItemCart, error, pricePlus} = this.props;
 
 		const item = this.props.menuItems.find(el => +el.id === +this.props.match.params.id);
 
@@ -37,11 +37,6 @@ class ItemPage extends Component {
 				</div>
 			)
 		}
-	
-        if(!error) {
-            return <Error />
-        }
-
 
 		return (
 			<div className = "item_page">
@@ -50,7 +45,11 @@ class ItemPage extends Component {
                     <img className="menu__img" src={url} alt={title}></img>
                     <div className="menu__category">Category: <span>{category}</span></div>
                     <div className="menu__price">Price: <span>{price}$</span></div>
-                    <button onClick={() => addItemCart(id)} className="menu__btn">Add to cart</button>
+                    <button onClick={() => {
+                        addItemCart(id);
+                        pricePlus();
+
+                    }} className="menu__btn">Add to cart</button>
                     <span className = {`menu__category_Img ${category}`}></span> 
                 </div>
             </div>
@@ -72,6 +71,7 @@ const mapDispatchToProps = {
     menuRequested,
     errorBoun,
     addItemCart,
+    pricePlus
 }
 
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(ItemPage));

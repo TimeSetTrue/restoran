@@ -43,37 +43,37 @@
         "url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
         "price": 13,
         "id": 3,
+        "itemCart": 1,
+        "priceFull": 13
+      }
+    ],
+    [
+      {
+        "title": "Cesar salad",
+        "url": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
+        "price": 12,
+        "id": 1,
         "itemCart": 2,
-        "priceFull": 26
+        "priceFull": 24
       },
       {
         "title": "Pizza Margherita",
         "url": "https://simply-delicious-food.com/wp-content/uploads/2020/06/Grilled-Pizza-Margherita-3-500x500.jpg",
         "price": 10,
         "id": 2,
-        "itemCart": 1,
-        "priceFull": 10
+        "itemCart": 2,
+        "priceFull": 20
       }
     ],
     [
-      {
-        "title": "Pizza Napoletana",
-        "url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
-        "price": 13,
-        "id": 3,
-        "itemCart": 2,
-        "priceFull": 26
-      },
       {
         "title": "Pizza Margherita",
         "url": "https://simply-delicious-food.com/wp-content/uploads/2020/06/Grilled-Pizza-Margherita-3-500x500.jpg",
         "price": 10,
         "id": 2,
-        "itemCart": 1,
-        "priceFull": 10
-      }
-    ],
-    [
+        "itemCart": 3,
+        "priceFull": 30
+      },
       {
         "title": "Pizza Napoletana",
         "url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
@@ -81,34 +81,6 @@
         "id": 3,
         "itemCart": 1,
         "priceFull": 13
-      }
-    ],
-    [
-      {
-        "title": "Greece salad",
-        "url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
-        "price": 8,
-        "id": 4,
-        "itemCart": 1,
-        "priceFull": 8
-      }
-    ],
-    [
-      {
-        "title": "Pizza Napoletana",
-        "url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
-        "price": 13,
-        "id": 3,
-        "itemCart": 4,
-        "priceFull": 52
-      },
-      {
-        "title": "Greece salad",
-        "url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
-        "price": 8,
-        "id": 4,
-        "itemCart": 2,
-        "priceFull": 16
       }
     ]
   ]
