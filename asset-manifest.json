@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/restoran/static/css/main.08a030ce.chunk.css",
+    "main.js": "/restoran/static/js/main.441025d6.chunk.js",
+    "main.js.map": "/restoran/static/js/main.441025d6.chunk.js.map",
+    "runtime~main.js": "/restoran/static/js/runtime~main.723cbc46.js",
+    "runtime~main.js.map": "/restoran/static/js/runtime~main.723cbc46.js.map",
+    "static/js/2.503ab65d.chunk.js": "/restoran/static/js/2.503ab65d.chunk.js",
+    "static/js/2.503ab65d.chunk.js.map": "/restoran/static/js/2.503ab65d.chunk.js.map",
+    "index.html": "/restoran/index.html",
+    "precache-manifest.66ebc25df74968ebce26c4383b54911a.js": "/restoran/precache-manifest.66ebc25df74968ebce26c4383b54911a.js",
+    "service-worker.js": "/restoran/service-worker.js",
+    "static/css/main.08a030ce.chunk.css.map": "/restoran/static/css/main.08a030ce.chunk.css.map",
+    "static/media/food-bg.jpg": "/restoran/static/media/food-bg.698e5e80.jpg",
+    "static/media/shopping-cart-solid.svg": "/restoran/static/media/shopping-cart-solid.701d6d1d.svg"
+  }
+}
