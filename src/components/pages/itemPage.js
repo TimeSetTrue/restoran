@@ -5,11 +5,9 @@ import { menuLoaded, menuRequested, errorBoun, addItemCart, pricePlus } from '..
 import Spinner from '../spinner';
 import Error from '../error';
 
-
 import './itemPage.css';
 
 class ItemPage extends Component {
-
 
 	componentDidMount() {
         if( this.props.menuItems.length === 0){
@@ -21,7 +19,6 @@ class ItemPage extends Component {
                 .catch(() => errorBoun())
         }
     }
-
 
 	render() {
 		const {loaded, addItemCart, error, pricePlus} = this.props;
@@ -48,14 +45,12 @@ class ItemPage extends Component {
                     <button onClick={() => {
                         addItemCart(id);
                         pricePlus();
-
                     }} className="menu__btn">Add to cart</button>
                     <span className = {`menu__category_Img ${category}`}></span> 
                 </div>
             </div>
 		)
 	}
-
 }
 
 const mapStateToProps = (state) => {
